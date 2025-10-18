@@ -72,6 +72,8 @@ pnpm dev     # or npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+<img width="501" height="748" alt="Sentiment Analysis Demo" src="https://github.com/user-attachments/assets/f566323c-6c21-4811-b7f5-381e5a2c479f" />
+
 ### Basic Usage
 
 Paste any text into the demo interface and view the sentiment classification and score instantly.
