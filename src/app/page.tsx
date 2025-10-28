@@ -362,20 +362,18 @@ export default function Page() {
       </section>
       <section id="languages" className="w-full py-12">
   <div className="space-y-8 max-w-2xl mx-auto text-center">
-    <div>
-      <span className="inline-block rounded-lg bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-white px-3 py-1 text-sm font-semibold shadow-lg shadow-[#06B6D4]/20">
-        Languages
+    <span className="inline-block rounded-lg bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-white px-3 py-1 text-sm font-semibold shadow-lg shadow-[#06B6D4]/20">
+      Languages
+    </span>
+    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl pb-2 leading-tight mt-2">
+      <span className="bg-gradient-to-r from-slate-900 via-[#06B6D4] to-slate-900 dark:from-[#E5E7EB] dark:via-[#22D3EE] dark:to-[#E5E7EB] bg-clip-text text-transparent">
+        Languages I Speak
       </span>
-      <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-slate-900 dark:text-[#E5E7EB] pb-2 leading-tight mt-2">
-        <span className="bg-gradient-to-r from-slate-900 via-[#06B6D4] to-slate-900 dark:from-[#E5E7EB] dark:via-[#22D3EE] dark:to-[#E5E7EB] bg-clip-text text-transparent">
-          Languages I Speak
-        </span>
-      </h2>
-      <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-2">
-        Communication is key. Here are the languages I use every day.
-      </p>
-    </div>
-    <div className="flex flex-col gap-4 items-center">
+    </h2>
+    <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-2">
+      Communication is key. Here are the languages I use every day.
+    </p>
+    <div className="flex flex-col gap-4 items-center mt-8">
       {DATA.languages.map((lang, idx) => (
         <LanguageAccordion
           key={lang.name}

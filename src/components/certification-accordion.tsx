@@ -88,7 +88,7 @@ export function CertificationAccordion({ cert, idx }: { cert: any; idx: number }
         aria-expanded={open}
         aria-controls={`cert-panel-${idx}`}
       >
-  <span className="font-semibold text-base text-slate-900 dark:text-[#E5E7EB] flex-1 text-left truncate">{cert.title}</span>
+        <span className="font-semibold text-base text-[#E5E7EB] flex-1 text-left truncate">{cert.title}</span>
         <span className="text-xs text-[#06B6D4] font-semibold mx-4 w-14 text-right">{cert.year}</span>
         <span className="px-3 py-1 border border-[#06B6D4] text-[#06B6D4] rounded-lg text-xs font-semibold bg-transparent mx-2">Certificate</span>
         <span className="ml-2">{open ? <ChevronUp className="w-5 h-5 text-[#06B6D4]" /> : <ChevronDown className="w-5 h-5 text-[#06B6D4]" />}</span>

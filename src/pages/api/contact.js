@@ -27,6 +27,7 @@ export default async function handler(req, res) {
     await sgMail.send(msg);
     return res.status(200).json({ success: true });
   } catch (error) {
-    return res.status(500).json({ error: 'Failed to send email' });
+    console.error('SendGrid error:', error);
+    return res.status(500).json({ error: 'Failed to send email', details: error.message || error.toString() });
   }
 }

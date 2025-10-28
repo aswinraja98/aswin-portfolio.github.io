@@ -243,16 +243,22 @@ const DATA = {
       link: "https://learn.microsoft.com/en-us/users/ashwinrajakannan-1579/achievements/j9q8dfet"
     }
   ],
-  languages: [
+    languages: [
     {
       name: "Tamil",
-      proficiency: "Native",
-      icon: "IN"
+      icon: "IN",
+      level: "Native",
+      proficiencyBar: "100%",
+      description: "A southern language spoken in Tamil Nadu, India.",
+      link: "https://en.wikipedia.org/wiki/Tamil_language"
     },
     {
       name: "English",
-      proficiency: "Fluent",
-      icon: "GB"
+      icon: "GB",
+      level: "Fluent",
+      proficiencyBar: "90%",
+      description: "A global language, widely used for international communication.",
+      link: "https://en.wikipedia.org/wiki/English_language"
     }
   ],
 } as const;
