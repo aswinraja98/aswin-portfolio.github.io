@@ -70,7 +70,7 @@ function ContactFormAjax() {
           className="w-full p-4 rounded-lg bg-slate-50 dark:bg-[#1E293B] border-2 border-slate-200 dark:border-[#1F2937] focus:border-[#06B6D4] outline-none transition-all resize-none min-h-[120px] text-slate-900 dark:text-[#E5E7EB] placeholder:text-slate-400 dark:placeholder:text-[#9CA3AF]"
         />
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-row items-center justify-between w-full mt-6">
         <button
           type="submit"
           className="bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-white px-6 py-2 rounded-lg font-medium flex items-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/50 transition-all"
@@ -79,10 +79,17 @@ function ContactFormAjax() {
           {loading ? "Sending..." : "Send"}
           <Icons.email className="h-4 w-4" />
         </button>
-        {status && (
-          <span className="text-green-600 dark:text-green-400 text-sm font-medium">{status}</span>
-        )}
+        <div className="flex gap-3 justify-end">
+          <a href="https://github.com/aswinraja98" target="_blank" rel="noopener" aria-label="GitHub"><Icons.globe className="h-7 w-7 text-[#06B6D4]" /></a>
+          <a href="https://linkedin.com/in/aswinraja98" target="_blank" rel="noopener" aria-label="LinkedIn"><Icons.linkedin className="h-7 w-7 text-[#06B6D4]" /></a>
+          <a href="https://medium.com/@aswinraja98" target="_blank" rel="noopener" aria-label="Medium"><Icons.medium className="h-7 w-7 text-[#06B6D4]" /></a>
+          <a href="https://kaggle.com/aswinraja98" target="_blank" rel="noopener" aria-label="Kaggle"><Icons.kaggle className="h-7 w-7 text-[#06B6D4]" /></a>
+          <a href="mailto:aswinraja98@gmail.com" aria-label="Email"><Icons.email className="h-7 w-7 text-[#06B6D4]" /></a>
+        </div>
       </div>
+      {status && (
+        <span className="text-green-600 dark:text-green-400 text-sm font-medium block mt-2">{status}</span>
+      )}
     </form>
   );
 }

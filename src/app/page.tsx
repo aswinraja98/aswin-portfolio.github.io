@@ -304,29 +304,43 @@ export default function Page() {
               </div>
             </div>
           </BlurFade>
-          <div className="w-full max-w-[800px] mx-auto">
-            <table className="w-full border-collapse">
-              <tbody>
-                <tr className="gap-3">
-                  {DATA.projects.map((project, id) => (
-                    <td key={project.title} className="align-top p-1.5 w-1/2">
-                      <BlurFade delay={BLUR_FADE_DELAY * 12 + id * 0.05}>
-                        <ProjectCard
-                          href={project.href}
-                          title={project.title}
-                          description={project.description}
-                          dates={project.dates}
-                          tags={project.technologies}
-                          image={project.image}
-                          video={project.video}
-                          links={project.links}
-                        />
-                      </BlurFade>
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
+          <div className="w-full max-w-[900px] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {DATA.projects.slice(0,2).map((project, id) => (
+                <BlurFade key={project.title} delay={BLUR_FADE_DELAY * 12 + id * 0.05}>
+                  <div className="h-full flex flex-col">
+                    <ProjectCard
+                      href={project.href}
+                      title={project.title}
+                      description={project.description}
+                      dates={project.dates}
+                      tags={project.technologies}
+                      image={project.image}
+                      video={project.video}
+                      links={project.links}
+                      isTextSummarization={project.title === "Text Summarization System"}
+                      isSentimentAnalysis={project.title === "Sentiment Analysis Tool"}
+                    />
+                  </div>
+                </BlurFade>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <BlurFade delay={BLUR_FADE_DELAY * 12 + 2 * 0.05}>
+                <div className="h-full flex flex-col">
+                  <ProjectCard
+                    href={DATA.projects[2].href}
+                    title={DATA.projects[2].title}
+                    description={DATA.projects[2].description}
+                    dates={DATA.projects[2].dates}
+                    tags={DATA.projects[2].technologies}
+                    image={DATA.projects[2].image}
+                    video={DATA.projects[2].video}
+                    links={DATA.projects[2].links}
+                  />
+                </div>
+              </BlurFade>
+            </div>
           </div>
         </div>
       </section>
@@ -452,47 +466,7 @@ export default function Page() {
       {/* Contact Form - FormSpree AJAX */}
       <ContactFormAjax />
 
-      {/* Social Icons */}
-      <div className="flex items-center gap-3 mt-6 justify-center">
-        <a
-          href={DATA.contact.social.GitHub.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-3 rounded-full bg-slate-800 dark:bg-slate-700 hover:bg-[#06B6D4] transition-all hover:scale-110"
-        >
-          <Icons.github className="h-5 w-5 text-white hover:text-white" />
-        </a>
-        <a
-          href={DATA.contact.social.LinkedIn.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-3 rounded-full bg-slate-800 dark:bg-slate-700 hover:bg-[#06B6D4] transition-all hover:scale-110"
-        >
-          <Icons.linkedin className="h-5 w-5 text-white hover:text-white" />
-        </a>
-        <a
-          href="https://medium.com/@aswinraja98"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-3 rounded-full bg-slate-800 dark:bg-slate-700 hover:bg-[#06B6D4] transition-all hover:scale-110"
-        >
-          <Icons.medium className="h-5 w-5 text-white hover:text-white" />
-        </a>
-        <a
-          href="https://www.kaggle.com/ashwin0001"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-3 rounded-full bg-slate-800 dark:bg-slate-700 hover:bg-[#06B6D4] transition-all hover:scale-110"
-        >
-          <Icons.kaggle className="h-5 w-5 text-white hover:text-white" />
-        </a>
-        <a
-          href={`mailto:${DATA.email}`}
-          className="p-3 rounded-full bg-slate-800 dark:bg-slate-700 hover:bg-[#06B6D4] transition-all hover:scale-110"
-        >
-          <Icons.email className="h-5 w-5 text-white hover:text-white" />
-        </a>
-      </div>
+      {/* Social Icons row below form removed. Only icons in form row remain. */}
     </div>
   </div>
 </section>

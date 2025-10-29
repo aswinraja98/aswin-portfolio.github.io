@@ -148,10 +148,10 @@ const DATA = {
     {
       title: "Text Summarization System",
       description: "Production-ready text summarization system implementing extractive (BERT), abstractive (T5/BART), and hybrid approaches. Features CLI tool, ROUGE evaluation, and supports multiple NLP models for various use cases.",
-      technologies: ["Python", "BERT", "T5", "BART", "Transformers", "PyTorch", "NLTK", "scikit-learn"],
+        technologies: ["Python", "BERT", "T5", "BART", "Transformers", "PyTorch", "NLTK", "scikit-learn", "Text Summarization System"],
       href: "/projects/text-summarization-demo",
       dates: "2025",
-      image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&auto=format&fit=crop&q=60",
+  image: "/text-Summarization-System-logo.png",
       video: "",
       links: [
         {
@@ -162,6 +162,27 @@ const DATA = {
         {
           title: "Source",
           href: "https://github.com/aswinraja98/text-summarization-system",
+          icon: "Github"
+        }
+      ],
+    },
+    {
+      title: "Sentiment Analysis Tool",
+  description: "Production-ready sentiment analysis system using Python and VADER (Valence Aware Dictionary and sEntiment Reasoner) for robust sentiment scoring. Features a Next.js/React frontend demo, and supports advanced NLP with scikit-learn and other Python libraries.",
+  technologies: ["Python", "VADER", "scikit-learn", "NLP", "Next.js", "React"],
+      href: "/projects/sentiment-analysis-demo",
+      dates: "2025",
+  image: "/sentiment-analysis-tool-logo.jpeg",
+      video: "",
+      links: [
+        {
+          title: "Demo",
+          href: "/projects/sentiment-analysis-demo",
+          icon: "Globe"
+        },
+        {
+          title: "Source",
+          href: "https://github.com/aswinraja98/sentiment-analysis-tool-v2",
           icon: "Github"
         }
       ],
