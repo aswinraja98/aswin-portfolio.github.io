@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
 <h1>🤖 Ashwin Rajakannan</h1>
 <h3>AI/ML & Data Developer Portfolio</h3>
@@ -120,7 +121,6 @@ The contact form uses FormSubmit. To receive submissions:
 - `navbar.tsx` - Bottom dock navigation
 - `page.tsx` - Main portfolio layout and sections
 
-## 📊 Sections Included
 
 1. **Hero** - Introduction with "Get Resume" and "Contact" CTAs
 2. **About** - Professional summary highlighting AI/ML expertise
@@ -131,23 +131,8 @@ The contact form uses FormSubmit. To receive submissions:
 7. **Certifications** - Clickable badges linking to credentials
 8. **Contact** - Working form with Name, Email, and Message fields
 
-## 🌐 Deployment
-
-### Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel
-```
-
 ### Netlify
 ```bash
-npm run build
-# Deploy the .next folder
-```
-
-### GitHub Pages
-- Build the static export: `npm run build`
-- Configure for static hosting
 
 ## 📄 License
 
@@ -166,3 +151,110 @@ MIT License - Copyright (c) 2025 Ashwin Rajakannan
 <p><i>Driven by curiosity and precision, turning data into intelligent systems</i></p>
 </div>
 
+=======
+
+# 📄 Sentiment Analysis Tool
+
+A production-ready sentiment analysis system for classifying text as Positive, Negative, or Neutral using VADER (Valence Aware Dictionary and sEntiment Reasoner) in a modern Next.js/React stack. Built for fast, accurate, and interactive sentiment detection.
+
+---
+
+Try the live demo interface to see sentiment analysis in action! Paste any text and instantly view its sentiment classification and score.
+
+📍 **Demo Interface:** See the `demo/` folder for a Next.js/React frontend for interactive sentiment analysis.
+
+> The demo folder contains a web interface that can be integrated with this JavaScript backend to create a full-stack application. See `demo/README.md` for integration instructions.
+
+---
+
+## 🎯 Problem Statement
+
+In today's digital world, understanding user sentiment is crucial for businesses, researchers, and developers. Manual sentiment analysis is time-consuming and subjective. There's a need for automated systems that can:
+
+- Accurately classify text sentiment (positive, negative, neutral)
+- Provide real-time feedback for user-generated content
+- Integrate easily into web applications
+- Scale to production environments
+
+---
+
+## 💡 Solution
+
+This project implements a robust sentiment analysis tool using VADER:
+
+- **VADER Sentiment Analysis**: Lexicon and rule-based sentiment analysis specifically designed for social media and short texts.
+- **Next.js API Route**: Sentiment analysis runs directly in the API route for seamless integration.
+- **No Backend Required**: All logic is handled in JavaScript, making deployment simple and fast.
+
+---
+
+## 🛠️ Tech Stack
+
+### Core Technologies
+- JavaScript/TypeScript
+- Next.js (React framework)
+- VADER sentiment analysis (ported to JS)
+- Tailwind CSS (UI styling)
+
+### Additional Libraries
+- react-icons (UI icons)
+- Node.js (runtime)
+
+---
+
+✅ Real-time sentiment classification in browser and API
+✅ Accurate detection of positive, negative, and neutral sentiment
+✅ No server-side dependencies required
+✅ Easy integration into any React/Next.js project
+
+---
+
+## 🚀 Quick Start
+
+pnpm install # or npm install
+pnpm dev     # or npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+<img width="501" height="748" alt="Sentiment Analysis Demo" src="https://github.com/user-attachments/assets/f566323c-6c21-4811-b7f5-381e5a2c479f" />
+
+### Basic Usage
+
+Paste any text into the demo interface and view the sentiment classification and score instantly.
+
+---
+
+## 📁 Project Structure
+
+```
+sentiment-analysis-tool/
+│
+├── src/
+│   ├── api.py                # Python API (if using Python backend)
+│   ├── sentiment_model.py    # Sentiment analysis logic
+│   └── ...
+│
+├── demo/
+│   ├── pages/
+│   │   ├── index.tsx         # Main demo page
+│   └── ...
+│
+├── data/
+│   └── sample_reviews.txt    # Sample input texts
+│
+├── tests/
+│   └── test_sentiment_model.py # Unit tests
+└── README.md
+
+---
+
+## 📖 Documentation
+
+### Sentiment Analysis Workflow
+1. Text Preprocessing: Clean and format input text
+2. Sentiment Scoring: Use VADER to calculate sentiment scores
+3. Classification: Assign Positive, Negative, or Neutral label
+4. Return Result: Display sentiment and score in UI
+
+---
