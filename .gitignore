@@ -20,6 +20,13 @@
 .DS_Store
 *.pem
 
+# Python virtual environment
+.venv/
+
+# Large binaries (example)
+*.dll
+*.node
+
 # debug
 npm-debug.log*
 yarn-debug.log*
