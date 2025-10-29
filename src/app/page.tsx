@@ -17,10 +17,22 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   const [showScrollTop, setShowScrollTop] = React.useState(false);
+  const [expandedCardId, setExpandedCardId] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
+
+      // Collapse expanded card if scrolled below projects section
+      if (expandedCardId !== null) {
+        const projectsSection = document.getElementById("projects");
+        if (projectsSection) {
+          const rect = projectsSection.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            setExpandedCardId(null);
+          }
+        }
+      }
 
       if (window.location.hash === "#projects") {
         const projectsSection = document.getElementById("projects");
@@ -42,7 +54,7 @@ export default function Page() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [expandedCardId]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -305,41 +317,28 @@ export default function Page() {
             </div>
           </BlurFade>
           <div className="w-full max-w-[900px] mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {DATA.projects.slice(0,2).map((project, id) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              {DATA.projects.map((project, id) => (
                 <BlurFade key={project.title} delay={BLUR_FADE_DELAY * 12 + id * 0.05}>
-                  <div className="h-full flex flex-col">
+                  <div className="h-full flex flex-col w-full">
                     <ProjectCard
                       href={project.href}
                       title={project.title}
                       description={project.description}
                       dates={project.dates}
-                      tags={project.technologies}
+                      tags={project.technologies ? [...project.technologies] : undefined}
                       image={project.image}
                       video={project.video}
-                      links={project.links}
+                      links={project.links ? [...project.links] : undefined}
                       isTextSummarization={project.title === "Text Summarization System"}
                       isSentimentAnalysis={project.title === "Sentiment Analysis Tool"}
+                      expanded={expandedCardId === id}
+                      onExpand={() => setExpandedCardId(id)}
+                      onCollapse={() => setExpandedCardId(null)}
                     />
                   </div>
                 </BlurFade>
               ))}
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-              <BlurFade delay={BLUR_FADE_DELAY * 12 + 2 * 0.05}>
-                <div className="h-full flex flex-col">
-                  <ProjectCard
-                    href={DATA.projects[2].href}
-                    title={DATA.projects[2].title}
-                    description={DATA.projects[2].description}
-                    dates={DATA.projects[2].dates}
-                    tags={DATA.projects[2].technologies}
-                    image={DATA.projects[2].image}
-                    video={DATA.projects[2].video}
-                    links={DATA.projects[2].links}
-                  />
-                </div>
-              </BlurFade>
             </div>
           </div>
         </div>

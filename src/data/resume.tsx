@@ -203,6 +203,22 @@ const DATA = {
         }
       ],
     },
+    {
+      title: "Traffic Sign Recognition System",
+      description: "Deep learning-based system for real-time traffic sign classification using CNNs trained on the GTSRB dataset. Features a modern Next.js/Tailwind CSS frontend and FastAPI backend. Includes image preprocessing, prediction, and technical badges.",
+      technologies: ["Python", "TensorFlow", "FastAPI", "Next.js", "Tailwind CSS", "GTSRB", "Computer Vision", "Deep Learning"],
+      href: "https://github.com/aswinraja98/traffic-signs-recognition-system",
+      dates: "2025",
+      image: "/traffic-sign-recognition-system-logo.png",
+      video: "",
+      links: [
+        {
+          title: "Source",
+          href: "https://github.com/aswinraja98/traffic-signs-recognition-system",
+          icon: "Github"
+        }
+      ],
+    },
   ],
   education: [
     {

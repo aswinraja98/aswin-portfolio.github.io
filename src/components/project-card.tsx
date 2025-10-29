@@ -6,6 +6,7 @@ import { Badge } from "./ui/badge";
 import { cn } from "../lib/utils";
 import Markdown from "react-markdown";
 
+
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -19,6 +20,9 @@ type ProjectCardProps = {
   isSentimentAnalysis?: boolean;
   isPaperOnly?: boolean;
   className?: string;
+  expanded?: boolean;
+  onExpand?: () => void;
+  onCollapse?: () => void;
 };
 
 function getIcon(icon?: string) {
@@ -38,23 +42,12 @@ const ProjectCard = ({
   isTextSummarization,
   isSentimentAnalysis,
   isPaperOnly,
-  className
-}: {
-  title: string;
-  description: string;
-  image?: string;
-  video?: string;
-  tags?: string[];
-  links?: { href: string; title: string; icon?: string }[];
-  dates?: string;
-  href?: string;
-  isTextSummarization?: boolean;
-  isSentimentAnalysis?: boolean;
-  isPaperOnly?: boolean;
-  className?: string;
-}) => {
+  className,
+  expanded = false,
+  onExpand,
+  onCollapse
+}: ProjectCardProps) => {
   const [showDemoModal, setShowDemoModal] = useState(false);
-  const [showFullDesc, setShowFullDesc] = useState(false);
 
   // Shorten description to 20 words, show full on toggle
   const getShortDesc = (desc: string, wordLimit: number) => {
@@ -68,11 +61,11 @@ const ProjectCard = ({
     <>
       <Card
         className={cn(
-          "flex flex-col overflow-hidden bg-slate-50 dark:bg-[#121417] border border-slate-200 dark:border-transparent hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-all duration-300 ease-out justify-between",
+          `flex flex-col overflow-hidden bg-slate-50 dark:bg-[#121417] border border-slate-200 dark:border-transparent hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-all duration-300 ease-out justify-between ${expanded ? '' : 'h-[520px]'} `,
           className
         )}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col h-full">
           {/* Row 1: Image/Video Section */}
           <div>
             {(video || image) && (
@@ -175,18 +168,18 @@ const ProjectCard = ({
             {tags && tags.length > 0 && (
               <button
                 className="flex items-center justify-center text-[#06B6D4] hover:text-[#0891B2] transition-all"
-                onClick={() => setShowFullDesc((v) => !v)}
-                aria-label={showFullDesc ? "Collapse skills" : "Expand skills"}
+                onClick={() => expanded ? onCollapse && onCollapse() : onExpand && onExpand()}
+                aria-label={expanded ? "Collapse skills" : "Expand skills"}
                 style={{ width: '32px', height: '32px' }}
               >
-                <span className="sr-only">{showFullDesc ? "Collapse" : "Expand"}</span>
+                <span className="sr-only">{expanded ? "Collapse" : "Expand"}</span>
                 <svg
                   width="20"
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`transition-transform duration-200 ${showFullDesc ? 'rotate-180' : ''}`}
+                  className={`transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
                 >
                   <path d="M5 8l5 5 5-5" stroke="#06B6D4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -194,7 +187,7 @@ const ProjectCard = ({
             )}
           </div>
           {/* Row 5: Expandable Skill Badges */}
-          {showFullDesc && (
+          {expanded && (
             <div className="px-4 pb-2 flex flex-wrap gap-2 items-center justify-center animate-fadeIn">
               {tags && tags.length > 0 && tags.map((tag: string) => (
                 tag === "Text Summarization System" ? null : (
@@ -209,14 +202,20 @@ const ProjectCard = ({
             </div>
           )}
           {/* Row 6: Action Buttons (always visible) */}
-          <div className="px-4 pb-4 pt-2 flex items-center justify-center">
-            <div className="flex flex-wrap gap-2 w-full justify-center items-center">
+          <div className="px-4 pb-4 pt-2 flex items-center justify-center mt-auto">
+            <div
+              className={
+                expanded
+                  ? "flex flex-wrap gap-2 w-full justify-center items-center"
+                  : "flex flex-wrap gap-2 w-full justify-center items-center min-h-[40px]"
+              }
+            >
               {links && links.length > 0 && links.map((link: { href: string; title: string; icon?: string }, idx: number) => (
                 <Link 
                   href={link?.href} 
                   key={idx} 
                   target="_blank"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-medium rounded-md bg-transparent text-[#06B6D4] border border-[#06B6D4] hover:bg-[#06B6D4] hover:text-white transition-all duration-200"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-[10px] font-medium rounded-md bg-transparent text-[#06B6D4] border border-[#06B6D4] hover:bg-[#06B6D4] hover:text-white transition-all duration-200 min-w-[90px] justify-center"
                 >
                   {getIcon(link.icon)}
                   <span>{link.title}</span>
@@ -224,7 +223,7 @@ const ProjectCard = ({
               ))}
               {/* Add invisible placeholder for alignment if only one button */}
               {links && links.length === 1 && (
-                <span className="inline-block px-3 py-1.5 opacity-0">&nbsp;</span>
+                <span className="inline-block px-3 py-2 min-w-[90px] opacity-0">&nbsp;</span>
               )}
             </div>
           </div>
