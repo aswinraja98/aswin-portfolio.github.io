@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore node_modules and build output in subfolders
+projects_portfolio/web-demo-isolated/node_modules/
+projects_portfolio/web-demo-isolated/.next/
