@@ -16,17 +16,17 @@ const DATA = {
     "AI/ML Developer specializing in NLP and data engineering.",
   description:
     "Driven by curiosity and precision, I turn data into intelligent systems. From building NLP models with Transformers to engineering scalable data pipelines with Docker and Flask, each project and certification has shaped my journey toward mastering the AI–ML ecosystem.",
-  avatarUrl: "/avatar.png",
+  avatarUrl: "/aswin-portfolio.github.io/avatar.png",
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-  email: "aswinraja98@gmail.com",
-  phone: "+91 6374511087",
-  location: "Dharmapuri, Tamilnadu, India",
-  locationLink: "https://www.google.com/maps/place/Dharmapuri,+Tamil+Nadu",
-  social: {
+    email: "aswinraja98@gmail.com",
+    phone: "+91 6374511087",
+    location: "Dharmapuri, Tamilnadu, India",
+    locationLink: "https://www.google.com/maps/place/Dharmapuri,+Tamil+Nadu",
+    social: {
       GitHub: {
         name: "GitHub",
         url: "https://github.com/aswinraja98",
@@ -122,7 +122,7 @@ const DATA = {
       start: "04/2023",
       end: "06/2023",
       href: "",
-      logoUrl: "/Assisto-logo.png",
+      logoUrl: "/aswin-portfolio.github.io/Assisto-logo.png",
       description: "Worked on NLP models using Transformers (MT5, T5, Byt5). Optimized data pipelines with Jina AI and Haystack. Improved model performance and integrated APIs.",
     },
     {
@@ -131,7 +131,7 @@ const DATA = {
       start: "12/2022",
       end: "01/2023",
       href: "",
-      logoUrl: "/exotic-learning-Logo.webp",
+      logoUrl: "/aswin-portfolio.github.io/exotic-learning-Logo.webp",
       description: "Developed strategies to expand the company's reach in the education sector. Built and maintained relationships with educational institutions and business stakeholders.",
     },
     {
@@ -140,7 +140,7 @@ const DATA = {
       start: "01/2022",
       end: "07/2022",
       href: "",
-      logoUrl: "/Saturam-logo.jpg",
+      logoUrl: "/aswin-portfolio.github.io/Saturam-logo.jpg",
       description: "Built RESTful APIs using Flask for data extraction and manipulation. Utilized Python, SQL, and Docker for data engineering tasks. Performed web scraping to collect and analyze data efficiently.",
     },
   ],
@@ -148,10 +148,10 @@ const DATA = {
     {
       title: "Text Summarization System",
       description: "Production-ready text summarization system implementing extractive (BERT), abstractive (T5/BART), and hybrid approaches. Features CLI tool, ROUGE evaluation, and supports multiple NLP models for various use cases.",
-        technologies: ["Python", "BERT", "T5", "BART", "Transformers", "PyTorch", "NLTK", "scikit-learn", "Text Summarization System"],
+      technologies: ["Python", "BERT", "T5", "BART", "Transformers", "PyTorch", "NLTK", "scikit-learn", "Text Summarization System"],
       href: "/projects/text-summarization-demo",
       dates: "2025",
-  image: "/text-Summarization-System-logo.png",
+      image: "/aswin-portfolio.github.io/text-Summarization-System-logo.png",
       video: "",
       links: [
         {
@@ -168,11 +168,11 @@ const DATA = {
     },
     {
       title: "Sentiment Analysis Tool",
-  description: "Production-ready sentiment analysis system using Python and VADER (Valence Aware Dictionary and sEntiment Reasoner) for robust sentiment scoring. Features a Next.js/React frontend demo, and supports advanced NLP with scikit-learn and other Python libraries.",
-  technologies: ["Python", "VADER", "scikit-learn", "NLP", "Next.js", "React"],
+      description: "Production-ready sentiment analysis system using Python and VADER (Valence Aware Dictionary and sEntiment Reasoner) for robust sentiment scoring. Features a Next.js/React frontend demo, and supports advanced NLP with scikit-learn and other Python libraries.",
+      technologies: ["Python", "VADER", "scikit-learn", "NLP", "Next.js", "React"],
       href: "/projects/sentiment-analysis-demo",
       dates: "2025",
-  image: "/sentiment-analysis-tool-logo.jpeg",
+      image: "/aswin-portfolio.github.io/sentiment-analysis-tool-logo.jpeg",
       video: "",
       links: [
         {
@@ -209,7 +209,7 @@ const DATA = {
       technologies: ["Python", "TensorFlow", "FastAPI", "Next.js", "Tailwind CSS", "GTSRB", "Computer Vision", "Deep Learning"],
       href: "https://github.com/aswinraja98/traffic-signs-recognition-system",
       dates: "2025",
-      image: "/traffic-sign-recognition-system-logo.png",
+      image: "/aswin-portfolio.github.io/traffic-sign-recognition-system-logo.png",
       video: "",
       links: [
         {
@@ -227,7 +227,7 @@ const DATA = {
       start: "2020",
       end: "2022",
       href: "https://ceg.annauniv.edu/profile.html",
-      logoUrl: "/anna-university-logo.png",
+      logoUrl: "/aswin-portfolio.github.io/anna-university-logo.png",
     },
     {
       school: "SRM Institute of Science and Technology",
@@ -235,7 +235,7 @@ const DATA = {
       start: "2015",
       end: "2020",
       href: "https://www.srmist.edu.in/",
-      logoUrl: "/srm-university-logo.png",
+      logoUrl: "/aswin-portfolio.github.io/srm-university-logo.png",
     },
   ],
   hackathons: [] as Array<{
@@ -283,7 +283,7 @@ const DATA = {
       link: "https://learn.microsoft.com/en-us/users/ashwinrajakannan-1579/achievements/j9q8dfet"
     }
   ],
-    languages: [
+  languages: [
     {
       name: "Tamil",
       icon: "IN",
@@ -304,5 +304,3 @@ const DATA = {
 } as const;
 
 export default DATA;
-
-
